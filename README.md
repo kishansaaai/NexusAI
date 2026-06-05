@@ -206,14 +206,45 @@ npm run dev
 
 ---
 
-## 🚀 Git & Deployment Notes
+## 🚀 Production Deployment
+
+NexusAI is successfully deployed and running live in production!
+
+- **Live URL**: [https://nexusai-eqm5.onrender.com](https://nexusai-eqm5.onrender.com)
+- **Deployment Platform**: Render (Web Service, Free Tier)
+
+### ⚙️ Production Configurations on Render
+
+To run the full stack (Frontend + Backend) inside a single Render Web Service, the project is configured as follows:
+
+1. **Build Command**:
+   ```bash
+   npm install --prefix Backend && npm install --prefix Frontend && npm run build --prefix Frontend
+   ```
+   *This command installs backend dependencies, installs frontend dependencies, and compiles the React app into static files (`Frontend/dist`).*
+
+2. **Start Command**:
+   ```bash
+   node Backend/server.js
+   ```
+   *Starts the Express server which hosts both the API endpoints (`/api/*`) and serves the static production build of the frontend.*
+
+3. **Required Environment Variables**:
+   * `NODE_ENV`: `production` (toggles the static-file serving logic in the Express server)
+   * `GROQ_API_KEY`: Your live Groq API key (to enable full LLM responses)
+
+4. **Express 5 Compatibility**:
+   The app uses Express 5 (`path-to-regexp` v8). Wildcard routes are matched using a native Regular Expression literal `app.get(/.*/, ...)` in [server.js](file:///C:/Users/saiki/.gemini/antigravity/scratch/sais--gpt/Backend/server.js) to avoid route matching errors.
+
+---
+
+## 🎨 Identity & Creator
+
+When asked about its builder or creator, **NexusAI** proudly identifies that it was built and developed by **Saikishan**.
+
+---
+
+## 🔒 Git Notes
 
 If you are committing this project to a public or private GitHub repository, ensure you do not commit your `Backend/.env` file. It is already added to `.gitignore`.
 
-For developers pushing changes with GitHub Email Privacy enabled:
-```bash
-# Set your git email to your GitHub noreply address
-git config user.email "your-github-id+username@users.noreply.github.com"
-git commit --amend --reset-author --no-edit
-git push origin main
-```
