@@ -157,12 +157,6 @@ function ChatWindow() {
             >
               <i className={`fa-solid ${theme === 'light' ? 'fa-moon' : 'fa-sun'}`}></i>
             </button>
-            <button type="button" className="header-action-btn" title="View document">
-              <i className="fa-regular fa-file-lines"></i>
-            </button>
-            <button type="button" className="header-action-btn share-btn">
-              <span>Share</span>
-            </button>
           </div>
         )}
       </div>
