@@ -97,7 +97,7 @@ function Sidebar() {
             )}
             <section className={`sidebar ${showHistory ? "show" : ""}`}>
                 <div className="sidebar-header">
-                    <span className="sidebar-brand">Companion</span>
+                    <span className="sidebar-brand">NexusAI</span>
                     <button className="sidebar-collapse-btn" onClick={() => setShowHistory(false)}>
                         <i className="fa-solid fa-angle-left"></i>
                     </button>

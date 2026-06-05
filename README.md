@@ -1,6 +1,6 @@
-# ✦ Companion — Premium Minimalist AI Chat Application
+# ✦ NexusAI — Premium Minimalist AI Chat Application
 
-Companion is a state-of-the-art, feature-complete conversational web application built with **React** (Frontend) and **Express** (Backend). The application is meticulously styled to match the warm eggshell (light mode) and charcoal (dark mode) aesthetics of Claude.ai, presenting a distraction-free, elegant layout focused on visual and interactive excellence.
+NexusAI is a state-of-the-art, feature-complete conversational web application built with **React** (Frontend) and **Express** (Backend). The application is meticulously styled to match the warm eggshell (light mode) and charcoal (dark mode) aesthetics of Claude.ai, presenting a distraction-free, elegant layout focused on visual and interactive excellence.
 
 ---
 
@@ -19,7 +19,7 @@ Companion is a state-of-the-art, feature-complete conversational web application
 
 ## 🎨 Overview & Design Philosophy
 
-The primary objective of **Companion** is to move away from cluttered, generic, and placeholder-filled chat templates, moving instead towards a premium, polished user interface. 
+The primary objective of **NexusAI** is to move away from cluttered, generic, and placeholder-filled chat templates, moving instead towards a premium, polished user interface. 
 
 ### Design Choices:
 - **Typography**: Inter (sans-serif) for structured elements, sidebar navigation, and inputs; paired with Lora (serif) for time-of-day greetings and header brands.
@@ -31,9 +31,9 @@ The primary objective of **Companion** is to move away from cluttered, generic, 
 ## 🚀 Key Features
 
 ### 1. Claude-Matching Welcome Screen
-- **Time-Based Welcome Greetings**: Determines local hour to serve `"Morning, My Companion"`, `"Afternoon, My Companion"`, or `"Evening, My Companion"`.
+- **Time-Based Welcome Greetings**: Determines local hour to serve `"Morning, NexusAI"`, `"Afternoon, NexusAI"`, or `"Evening, NexusAI"`.
 - **Animated Accent Asterisk**: A spinning flower symbol next to the main header utilizing keyframe rotations.
-- **Suggested Prompts**: 5 pre-styled horizontal pills (`Code`, `Learn`, `Write`, `Life stuff`, and `Companion's choice`) to automatically populate the input text area.
+- **Suggested Prompts**: 5 pre-styled horizontal pills (`Code`, `Learn`, `Write`, `Life stuff`, and `NexusAI's choice`) to automatically populate the input text area.
 - **Dynamic Transition**: Sending the first message automatically fades out the welcome card, slides the input area to the bottom, and mounts the scrolling conversation timeline.
 
 ### 2. Desktop Collapsible Sidebar
@@ -69,7 +69,7 @@ The primary objective of **Companion** is to move away from cluttered, generic, 
 ## 📂 Project Architecture
 
 ```
-companion/
+nexusai/
 ├── Backend/
 │   ├── data/
 │   │   └── threads.json   # Flat JSON database for saving chat history
@@ -120,7 +120,7 @@ The Express server exposes the following routes under the `/api` namespace:
     {
       "threadId": "UUID-v1",
       "title": "Title of conversation...",
-      "updatedAt": "2026-05-27T12:00:00Z"
+      "updatedAt": "2026-06-05T12:00:00Z"
     }
   ]
   ```

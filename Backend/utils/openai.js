@@ -6,7 +6,7 @@ const getMockAPIResponse = (message) => {
     if (msg.includes("markdown") || msg.includes("bold") || msg.includes("format") || msg.includes("formatting")) {
         return `### 📝 Markdown Formatting Guide
 
-Here is a showcase of how Companion renders different markdown elements:
+Here is a showcase of how NexusAI renders different markdown elements:
 
 1. **Bold Text** using \`**bold**\`
 2. *Italic Text* using \`*italic*\`
@@ -134,7 +134,7 @@ Here are three creative project ideas you can build next:
     }
 
     // Default conversational responses
-    return `Hello! I am **Companion**, your local conversational companion.
+    return `Hello! I am **NexusAI**, your local conversational AI assistant.
 
 Currently, the server is running in **Preview Mode** because no \`GROQ_API_KEY\` was found in your environment.
 

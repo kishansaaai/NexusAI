@@ -122,7 +122,7 @@ function ChatWindow() {
           {!(newChat && prevChat.length === 0 && !reply) && (
             <div className="header-title-wrapper">
               <span className="header-title">
-                {allThreads.find(t => t.threadId === currThreadId)?.title || "Companion"}
+                {allThreads.find(t => t.threadId === currThreadId)?.title || "NexusAI"}
               </span>
               <i className="fa-solid fa-angle-down chevron-icon"></i>
               <span className="token-counter">
@@ -182,7 +182,7 @@ function ChatWindow() {
           <div className="welcome-content-wrapper">
             <div className="welcome-greeting">
               <span className="flower-symbol">✦</span>
-              <h2>{getGreeting()}, My Companion</h2>
+              <h2>{getGreeting()}, NexusAI</h2>
             </div>
             
             <form className="welcome-input-form" onSubmit={handleSubmit}>
@@ -212,7 +212,7 @@ function ChatWindow() {
                 </div>
               </div>
               <div className="input-footer">
-                <span className="disclaimer-text">Companion is an AI assistant and can make mistakes. Please double-check responses.</span>
+                <span className="disclaimer-text">NexusAI is an AI assistant and can make mistakes. Please double-check responses.</span>
               </div>
             </form>
             
@@ -229,8 +229,8 @@ function ChatWindow() {
               <button type="button" onClick={() => setInputValue("Help me plan my daily tasks...")} className="pill-btn">
                 <i className="fa-solid fa-suitcase"></i> Life stuff
               </button>
-              <button type="button" onClick={() => setInputValue("What is Companion's choice recommendation?")} className="pill-btn">
-                <i className="fa-regular fa-lightbulb"></i> Companion's choice
+              <button type="button" onClick={() => setInputValue("What is NexusAI's choice recommendation?")} className="pill-btn">
+                <i className="fa-regular fa-lightbulb"></i> NexusAI's choice
               </button>
             </div>
           </div>
@@ -353,7 +353,7 @@ function ChatWindow() {
             </div>
           </div>
           <div className="input-footer">
-            <span className="disclaimer-text">Companion is an AI assistant and can make mistakes. Please double-check responses.</span>
+            <span className="disclaimer-text">NexusAI is an AI assistant and can make mistakes. Please double-check responses.</span>
           </div>
         </form>
       )}

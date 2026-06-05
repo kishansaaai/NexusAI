@@ -1,7 +1,7 @@
 {
-  "name": "companion-root",
+  "name": "nexusai-root",
   "version": "1.0.0",
-  "description": "Root project setup to run Companion Frontend and Backend concurrently",
+  "description": "Root project setup to run NexusAI Frontend and Backend concurrently",
   "private": true,
   "scripts": {
     "install:all": "npm install && npm install --prefix Backend && npm install --prefix Frontend",
