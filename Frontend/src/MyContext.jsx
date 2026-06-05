@@ -14,7 +14,7 @@ export const MyProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [isConfigured, setIsConfigured] = useState(true);
-  
+
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "light";
   });
@@ -27,9 +27,11 @@ export const MyProvider = ({ children }) => {
     });
   };
 
+  const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? "http://localhost:8080" : "");
+  
   const checkConfigStatus = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/config");
+      const response = await fetch(`${API_URL}/api/config`);
       if (response.ok) {
         const data = await response.json();
         setIsConfigured(data.isConfigured);
@@ -41,7 +43,7 @@ export const MyProvider = ({ children }) => {
 
   const getAllThreads = async () => {
     try {
-      const response = await fetch("http://localhost:8080/api/thread", {
+      const response = await fetch(`${API_URL}/api/thread`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -77,6 +79,7 @@ export const MyProvider = ({ children }) => {
   return (
     <MyContext.Provider
       value={{
+        API_URL,
         theme,
         toggleTheme,
         isConfigured,

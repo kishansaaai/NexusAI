@@ -6,6 +6,7 @@ import { v1 as uuidv1 } from "uuid";
 
 function Sidebar() {
     const { 
+        API_URL,
         allThreads, 
         setAllThreads, 
         getAllThreads,
@@ -34,7 +35,7 @@ function Sidebar() {
     const changeThread = async (newthreadId) => {
         setCurrentThreadId(newthreadId);
         try {
-            const response = await fetch(`http://localhost:8080/api/thread/${newthreadId}`);
+            const response = await fetch(`${API_URL}/api/thread/${newthreadId}`);
             
             if (!response.ok) {
                 showToast("Failed to load thread", "error");
@@ -58,7 +59,7 @@ function Sidebar() {
 
     const deleteThread = async (deleteThreadId) => {
         try {
-            const response = await fetch(`http://localhost:8080/api/thread/${deleteThreadId}`, {
+            const response = await fetch(`${API_URL}/api/thread/${deleteThreadId}`, {
                 method: "DELETE"
             });
             

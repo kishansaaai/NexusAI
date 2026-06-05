@@ -1,9 +1,14 @@
 import express from "express";
 import "dotenv/config";
+import path from "path";
+import { fileURLToPath } from "url";
 import chatRoutes from "./routes/chat.js";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 // Simple CORS - allow everything for development
 app.use((req, res, next) => {
@@ -19,11 +24,19 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.json({ message: "Server is running!" });
-});
-
 app.use("/api", chatRoutes);
+
+// Serve static assets from Frontend/dist in production
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "../Frontend/dist")));
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "../Frontend/dist/index.html"));
+    });
+} else {
+    app.get("/", (req, res) => {
+        res.json({ message: "Server is running!" });
+    });
+}
 
 app.listen(PORT, () => {
     console.log(`server running on ${PORT}`);

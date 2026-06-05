@@ -8,6 +8,7 @@ import { MyContext } from "./MyContext.jsx";
 
 function ChatWindow() {
   const { 
+    API_URL,
     allThreads,
     getAllThreads,
     prompt, 
@@ -49,7 +50,7 @@ function ChatWindow() {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:8080/api/chat", {
+      const response = await fetch(`${API_URL}/api/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
